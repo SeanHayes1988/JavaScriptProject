@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head> 
+<title>House Insurance </title>
+<meta charset='utf-8'>
+<meta name='description' content='house insurance calculator'>
+<meta name='keywords' content='house, insurance, calculator'>
+<meta name='author'  content='Under The Roof Limited'>
+<meta name='viewport' content='width=device-width'/>
+<link rel="stylesheet" href="main.css" type="text/css" >
+<script src="script.js"></script> 
+
+</head>
+<body>
+<div id="container">
+<div id="header">
+<h1> UNDER THE ROOF INSURANCE </h1>
+</div>
+<p> 
+<div id="calc">
+<form > <h2> Fill Out The Form Bellow.</h2> 
+<fieldset>
+
+Do you own the property or rent it from someone? <p>
+<input type="radio" name="owner" onclick="propertyOwner(50)"/> &nbsp; I own and live in it<br>
+<input type="radio" name="owner" onclick="propertyOwner(25)"/> &nbsp; I own it and it’s a Summer House<br>  
+<input type="radio" name="owner"  onclick="propertyOwner(5)"/> &nbsp; I rent it from someone  <br>  
+</p>
+<p>What type of property  do you own? </p>
+<select id="typeID" name="propertyType">
+<option value="0" onclick="propTypes(0)"> Select </option>
+<option value="detached" onclick="propTypes(100)"> Detached</option>
+<option value="semi-detached" onclick="propTypes(50)"> Semi-Detached</option>
+<option value="bungalow" onclick="propTypes(65)"> Bungalow </option>
+<option value="terraced" onclick="propTypes(40)"> Terraced</option> 
+<option value="apartment" onclick="propTypes(10)"> Apartment</option> 
+</select>
+
+<p>  How old is your property? </p>
+<select id="old" name="howOld">
+<option value="0" onclick="Old(0)"> Select </option>
+<option value="less1" onclick="Old(50)"> Less than a year </option>
+<option value="between1_5" onclick="Old(65)"> Between 1 and 5  </option>
+<option value="between5_15" onclick="Old(40)"> Between 5 and 15  </option>
+<option value="morethan15" onclick="Old(10)"> More than 15  </option>
+</select>
+<p> Do you have an house alarm installed on your property?</p>
+
+<input type="radio" name="alarm" onclick="houseAlarm(100)"/> No<br> 
+<input type="radio" name="alarm" onclick="houseAlarm(40)"/> Yes - Standard <br>
+<input type="radio" name="alarm" onclick="houseAlarm(10)"/> Yes - Monitored <br>
+
+<p>Have you have more than two smoke alarms installed on your property? </p>
+<input type="radio" name="smoke" onclick="smokeAlarm(50)"/> No 
+<input type="radio" name="smoke" onclick="smokeAlarm(10)"/> Yes
+
+<p>
+Where is your property located? </p>
+<p>
+<select id="propLocation" name="locations">
+<option value="0" onclick="propertyLocation(0)"> Select </option>
+<option value="dublin" onclick="propertyLocation(50)"> Dublin </option>
+<option value="sw" onclick="propertyLocation(30)">Cork, Limerick, Kerry </option> 
+<option value="west" onclick="propertyLocation(10)"> West of Ireland </option>
+</select>
+</p>
+
+<p>
+How long has the property claims free?</p>
+<p>
+<select id="claims" name="claimsFree"> 
+<option value="0" onclick="pClaimsFree(0)"> Select </option>
+<option value="one" onclick="pClaimsFree(100)"> 1 Year </option>
+<option value="two" onclick="pClaimsFree(80)"> 2 Years </option>
+<option value="three" onclick="pClaimsFree(60)"> 3 Years </option>
+<option value="four" onclick="pClaimsFree(40)"> 4 Years </option>
+<option value="five" onclick="pClaimsFree(20)"> 5 Years+ </option>
+</select>
+</p>
+<p>
+Building Cover:
+</p>
+<input type="text"  size="8" name="bCover" onblur="IntegersOnly(this.value);">  
+<p> Contents Cover:</p>
+<select id="cCover" name="CC"> 
+<option value="0" onclick="contentC(0)"> Select </option>
+<option value="20k" onclick="contentC(50)"> &euro;20,000 </option>
+<option value="40k" onclick="contentC(70)"> &euro;40,000</option>
+<option value="60k" onclick="contentC(90)"> &euro;60,000</option>
+<option value="80k" onclick="contentC(110)"> &euro;80,000</option>
+<option value="80pk" onclick="contentC(150)"> &euro;80,000+</option>
+</select>
+
+<p>Claims Excess: </p>
+<input type="radio" name="excess" onclick="cExcess(30)"> &euro;250
+<input type="radio" name="excess" onclick="cExcess(50)"> &euro;500
+<input type="radio" name="excess" onclick="cExcess(70)"> &euro;1,000 
+<p><input type="button" value="Calculate" onclick="Calc()"> </p>
+<p id="summary_report"> </p>
+</fieldset>
+
+</form>
+
+</div>
+</div>
+</body>
+</html>
